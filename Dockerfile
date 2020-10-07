@@ -9,4 +9,6 @@ RUN git clone https://github.com/grinco/HarmonizeProject
 RUN cd HarmonizeProject && chmod 755 setup.sh && ./setup.sh
 RUN mv ./HarmonizeProject/harmonize.py /app 
 
-CMD [ "python", "/app/harmonize.py" ]
+ENV ARGS ''
+
+CMD [ "sh", "-c", "python3 /app/harmonize.py $ARGS" ]
