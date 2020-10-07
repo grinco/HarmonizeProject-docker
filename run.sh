@@ -3,7 +3,7 @@ LAST='null'
 while [ true ]; do
   SYNC=`pigs r 14`
   if [ $LAST == $SYNC ]; then
-     sleep 5
+     sleep 1 
   elif [ $SYNC -eq 0 ]; then
      echo "Stopping HUE Sync"
      docker stop harmonizeproject
