@@ -5,5 +5,5 @@ Set up your hardware per the guide in HarmonizeProject author's github repo: htt
 Once you're done try the following:
 ```
 touch ~/client.json
-docker run --rm -t --name hamonize-project --device=/dev/video0 -v ~/client.json:/app/client.json grinco/harmonizeproject
+docker run --rm -t --name harmonizeproject --device=/dev/video0 -v ~/client.json:/app/client.json grinco/harmonizeproject
 ```
