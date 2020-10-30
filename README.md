@@ -26,4 +26,31 @@ Once you've set up the above run the script under screen:
 screen bash run.sh
 ```
 
+If you want to run the script as a systemd service create a file under /etc/systemd/system/harmonizeproject-docker.service with the following contents:
+```
+[Unit]
+Description=harmonizeproject-docker
+After=network.target
+
+[Service]
+ExecStart=/opt/HarmonizeProject-docker/run.sh
+WorkingDirectory=/opt/HarmonizeProject-docker
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Once you did that don't forget to grant pi user docker privileges and enable the service by runing
+```
+usermod -a -G docker pi
+systemctl enable harmonizeproject-docker
+systemctl start harmonizeproject-docker 
+```
+and then 
+
+
 It's hacky but it works.
