@@ -23,6 +23,8 @@ Example set up is:
 
 Once you've set up the above run the script under screen:
 ```
+sudo git clone https://github.com/grinco/HarmonizeProject-docker /opt/HarmonizeProject-docker
+cd /opt/HarmonizeProject-docker
 screen bash run.sh
 ```
 
@@ -50,7 +52,5 @@ usermod -a -G docker pi
 systemctl enable harmonizeproject-docker
 systemctl start harmonizeproject-docker 
 ```
-and then 
-
 
 It's hacky but it works.
